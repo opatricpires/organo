@@ -1,4 +1,10 @@
 <section>
+  <button class="favorite-btn" (click)="changeFavoriteStatus()">
+    <span>{{ book.isFavorite ? '\u2764' : '\u2661' }}</span>
+  </button>
+  <div class="book-image">
+    <img [src]="book.image" [alt]="book.title">
+  </div>
   <div class="book-info">
     <h2 class="book-title">{{ book.title }}</h2>
     <h3 class="book-author">{{ book.author }}</h3>
@@ -6,4 +12,12 @@
 </section>
 
 <!-- One way data binding -->
- <!-- é o envio de dados do arquivo .ts para o arquivo .html utilizando chaves duplas {{ }} -->
+<!-- é o envio de dados do arquivo .ts para o arquivo .html utilizando chaves duplas {{ }} -->
+
+<!-- Property binding -->
+<!-- é o envio de dados do arquivo .ts para o arquivo .html utilizando colchetes [ ] -->
+<!-- <img [src]="book.image" [alt]="book.title"> -->
+
+<!-- Event binding -->
+<!-- é o envio de dados (no caso função) do arquivo .html para o arquivo .ts utilizando parênteses ( ) -->
+<!-- <button (click)="changeFavoriteStatus()"> -->
