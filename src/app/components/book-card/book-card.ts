@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Book } from './book';
 
 @Component({
@@ -9,15 +9,22 @@ import { Book } from './book';
 })
 export class BookCardComponent {
 
-  changeFavoriteStatus() {
-    this.book.isFavorite = !this.book.isFavorite;
+  book = input.required<Book>();
+
+  changeFavoriteStatus(book: Book) {
+    book.isFavorite = !book.isFavorite;
   }
 
-  book: Book = {
-    title: 'The Great Gatsby',
-    author: 'F. Scott Fitzgerald',
-    isFavorite: false,
-    gender: 'Classic Literature',
-    image: "https://m.media-amazon.com/images/I/71OiLUfqjqL._AC_UF1000,1000_QL80_.jpg",
-  }
 }
+
+// Input Properties:
+// - São propriedades de um componente que podem ser configuradas por um componente pai.
+// - Permitem que um componente receba dados de um componente pai e os utilize em sua lógica ou exibição.
+// - São decoradas com o decorator @Input() do Angular, indicando que a propriedade pode ser configurada externamente.
+// - Permitem a comunicação entre componentes, facilitando a passagem de dados e a reutilização de componentes em diferentes contextos.
+
+// Input Signals:
+// - São sinais ou eventos que um componente pode emitir para notificar um componente pai sobre uma ação ou mudança de estado.
+// - Permitem que um componente filho se comunique com um componente pai, enviando informações ou notificações sobre eventos específicos.
+// - São decorados com o decorator @Output() do Angular, indicando que a propriedade é um evento que pode ser emitido para o componente pai.
+// - Permitem a comunicação entre componentes, facilitando a interação e a resposta a eventos em diferentes partes da aplicação.

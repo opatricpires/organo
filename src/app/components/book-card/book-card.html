@@ -1,13 +1,13 @@
 <section>
-  <button class="favorite-btn" (click)="changeFavoriteStatus()">
-    <span>{{ book.isFavorite ? '\u2764' : '\u2661' }}</span>
+  <button class="favorite-btn" (click)="changeFavoriteStatus(book())">
+    <span>{{ book().isFavorite ? '\u2764' : '\u2661' }}</span>
   </button>
   <div class="book-image">
-    <img [src]="book.image" [alt]="book.title">
+    <img [src]="book().image" [alt]="book().title">
   </div>
   <div class="book-info">
-    <h2 class="book-title">{{ book.title }}</h2>
-    <h3 class="book-author">{{ book.author }}</h3>
+    <h2 class="book-title">{{ book().title }}</h2>
+    <h3 class="book-author">{{ book().author }}</h3>
   </div>
 </section>
 
